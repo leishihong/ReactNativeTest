@@ -1,0 +1,17 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": false,
+    "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "lib": ["src/lib/"],
+      "views": ["src/views"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

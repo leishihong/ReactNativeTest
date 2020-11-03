@@ -10,8 +10,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "mobx": "^6.0.2",
+    "mobx-react": "^7.0.0",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0",
     "react": "16.13.1",
-    "react-native": "0.63.3"
+    "react-native": "0.63.3",
+    "react-native-deprecated-custom-components": "^0.1.2",
+    "react-native-vector-icons": "^7.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -21,10 +29,21 @@
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
-    "react-native-vector-icons": "^7.1.0",
     "react-test-renderer": "16.13.1"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-add": "pretty-quick --staged",
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
